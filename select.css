@@ -1,26 +1,23 @@
 
-body {
-    background: linear-gradient(
-        to bottom,
-        rgb(162, 181, 196) 75%,
-        #97cd5a 25% 
-    );    
-    text-align:center;
-    font-family:cursive
+body{
+    text-align: center;
+    font-family: cursive;
+    background-color:  #e4f5fd ;  
 }
+
 
 h1{
    color:#174A70;
-   font-size:60px;
+   font-size:50px;
    margin-top:40px
 
 }
 
 
 p{
-    font-size:18px;
-    margin-top:-30px;
-    color:rgb(84, 152, 116)
+    font-size:15px;
+    margin-top:-20px;
+    color:rgb(65, 130, 72)
 }
 
 a{
@@ -29,35 +26,93 @@ a{
 }
 
 
-
 .level1 {
-    width: 230px;
-    height: 120px;
+    width: 18%;
+    height: 22%;
     justify-content: center;
     align-items: center;
     display: flex;
     background-color: aliceblue;
     border-radius: 20px;
-    border: 3px solid #174A70;
-    color: #174A70;
-    font-size: 18px;
-    box-shadow: 0 12px 0 #174A70;
+    border: 3px solid #70bbc5;
+    color:#174A70;
+    box-shadow: 0 12px 0 #70bbc5;
     cursor: pointer;
     transition: 0.2s;
-    font-size:22px;
+    font-size:20px;
     position:absolute;
-    top:65%;
-    left:10%
-
+    top:40%;
+    left:13%
 }
 
 .level1:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 0 #174A70;
+    box-shadow: 0 8px 0 #70bbc5;
 }
 
 
 .level1:active {
     transform: translateY(3px);
-    box-shadow: 0 2px 0 #174A70;
+    box-shadow: 0 2px 0 #70bbc5;
+}
+
+
+.level2 {
+    width: 18%;
+    height: 22%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: aliceblue;
+    border-radius: 20px;
+    border: 3px solid #70bbc5;
+    color:#174A70;
+    box-shadow: 0 12px 0 #70bbc5;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size:20px;
+    position:absolute;
+    top:40%;
+    left:40%
+}
+
+.level2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 0 #70bbc5;
+}
+
+
+.level2:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 #70bbc5;
+}
+
+.level3 {
+    width: 18%;
+    height: 22%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: aliceblue;
+    border-radius: 20px;
+    border: 3px solid #70bbc5;
+    color:#174A70;
+    box-shadow: 0 12px 0 #70bbc5;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size:20px;
+    position:absolute;
+    top:40%;
+    left:67%
+}
+
+.level3:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 0 #70bbc5;
+}
+
+
+.level3:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 #70bbc5;
 }
