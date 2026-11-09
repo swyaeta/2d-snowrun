@@ -130,5 +130,6 @@ a{
     position: absolute;
     top:29%;
     left:28%;
-    color:rgb(102, 220, 244)
+    color:rgb(102, 220, 244);
+    pointer-events: none;
 }

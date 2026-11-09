@@ -9,8 +9,33 @@ let logs = document.querySelectorAll(".obstacle");
 
 let collectibles = document.getElementById("collectibles");
 let scoreDisplay = document.getElementById("score");
+let goalDisplay = document.getElementById("goal1");
+
 let score = 0;
+let goal = 100;
 let snowflakes = [];
+
+// this ends the game and opens the correct page
+function endGame(result) {
+
+    if (gameOver) return;
+
+    gameOver = true;
+    girlRunning = false;
+
+    girl.classList.remove("running");
+    girl.classList.remove("jump");
+    background.classList.remove("moving");
+
+    if (result === "completed") {
+        window.location.href = "completed.html";
+    } else {
+        window.location.href = "replay.html";
+    }
+}
+
+// this displays the goal
+goalDisplay.textContent = goal;
 
 // this is to press ENTER to run
 document.addEventListener("keydown", function(event) {
@@ -32,16 +57,29 @@ document.addEventListener("keyup", function(event) {
     }
 });
 
-// this makes the yeti catch the girl when she is not running or hits smthg
+// this makes the yeti catch the girl
 setInterval(function() {
+
+    if (gameOver) return;
+
     let currentLeft = parseFloat(getComputedStyle(yeti).left);
 
-    if (gameOver) {
-        yeti.style.left = (currentLeft + 32) + "px";
-    }
-    else if (!girlRunning) {
+    if (!girlRunning) {
         yeti.style.left = (currentLeft + 5) + "px";
     }
+
+    let girlBox = girl.getBoundingClientRect();
+    let yetiBox = yeti.getBoundingClientRect();
+
+    if (
+        girlBox.left < yetiBox.right &&
+        girlBox.right > yetiBox.left &&
+        girlBox.bottom > yetiBox.top &&
+        girlBox.top < yetiBox.bottom
+    ) {
+        endGame("caught");
+    }
+
 }, 100);
 
 // this creates new snowflakes
@@ -53,6 +91,7 @@ function createSnowflake() {
     snowflake.textContent = "❄️";
     snowflake.style.right = "-40px";
     snowflake.style.top = (30 + Math.random() * 50) + "%";
+
     collectibles.appendChild(snowflake);
     snowflakes.push(snowflake);
 }
@@ -64,10 +103,12 @@ setInterval(function() {
         createSnowflake();
     }
 
-}, 1500);
+}, 600);
 
-// this is used to move all the logs (obastacles)
+// this moves all the logs and snowflakes
 function moveLog() {
+
+    if (gameOver) return;
 
     logs.forEach(function(log) {
         let currentRight = parseFloat(getComputedStyle(log).right);
@@ -81,15 +122,18 @@ function moveLog() {
 
     requestAnimationFrame(moveLog);
 }
+
 moveLog();
 
-// this makes thegirl jump with SPACE or ARROW UP
+// this makes the girl jump with SPACE or ARROW UP
 document.addEventListener("keydown", function(event) {
 
     if (event.code === "Space" || event.code === "ArrowUp") {
+
         if (!gameOver) {
             girl.classList.add("jump");
         }
+
         event.preventDefault();
     }
 });
@@ -117,34 +161,36 @@ document.addEventListener("keydown", function(event) {
             document.querySelector(".game").clientWidth - girl.offsetWidth,
             currentLeft + 20
         ) + "px";
+
         event.preventDefault();
     }
 });
 
-// this is to check collision with all obstacles
+// this checks collision with obstacles and collects snowflakes
 function checkCollision() {
+
+    if (gameOver) return;
 
     let girlBox = girl.getBoundingClientRect();
 
+    // obstacle collision
     logs.forEach(function(log) {
+
         let logBox = log.getBoundingClientRect();
 
         if (
             girlBox.right > logBox.left &&
             girlBox.left < logBox.right &&
             girlBox.bottom > logBox.top &&
-            girlBox.top < logBox.bottom &&
-            !gameOver
+            girlBox.top < logBox.bottom
         ) {
-            gameOver = true;
-            girlRunning = false;
-            girl.classList.remove("running");
-            background.classList.remove("moving");
-            console.log("The Yeti is coming!");
+            endGame("obstacle");
         }
     });
 
-    // this is for the collectibles
+    if (gameOver) return;
+
+    // snowflake collection
     snowflakes.forEach(function(snowflake) {
 
         let snowflakeBox = snowflake.getBoundingClientRect();
@@ -154,20 +200,29 @@ function checkCollision() {
             girlBox.bottom > snowflakeBox.top &&
             girlBox.top < snowflakeBox.bottom
         ) {
+
             score++;
             scoreDisplay.textContent = score;
+
             snowflake.remove();
+
             snowflakes = snowflakes.filter(function(item) {
                 return item !== snowflake;
             });
+
+            // level 1 goal
+            if (score >= goal) {
+                endGame("completed");
+            }
         }
 
         // this removes a point when a snowflake is missed
         else if (
-            snowflakeBox.right < document.querySelector(".game").getBoundingClientRect().left
+            snowflakeBox.right <
+            document.querySelector(".game").getBoundingClientRect().left
         ) {
             score--;
-           scoreDisplay.textContent = score;
+            scoreDisplay.textContent = score;
             snowflake.remove();
             snowflakes = snowflakes.filter(function(item) {
                 return item !== snowflake;
