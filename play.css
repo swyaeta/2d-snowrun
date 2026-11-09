@@ -11,6 +11,7 @@ body {
     overflow:hidden;
 }
 
+/* this is hold our bg pic*/
 .back{
     width:200%;
     height:100%;
@@ -24,6 +25,7 @@ body {
 
 }
 
+/* this is to loop and move around the bg making it endless*/
 .back.moving {
     animation: moveBackground 10s linear infinite;
 }
@@ -47,15 +49,16 @@ body {
     background-position:0 0;
 
     position:absolute;
-    top:59%;
+    top:57%;
     left:35%;
-    transition: top 0.3s ease;
+    transition: top 0.3s ease, left 0.2s ease;
     image-rendering:pixelated;
+
 }
 
 /* this makes the girl jump when SPACE or arrow up is pressed */
 .girl.jump {
-    top: 35%;
+    top: 30%;
 }
 
 
@@ -100,13 +103,51 @@ body {
     }
 }
 
+#collectibles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 7;
+}
+
+.collectible {
+    position: absolute;
+    font-size: 30px;
+}
+
+
+.score {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 25px;
+    color: #aaeba0;
+    z-index: 10;
+    font-family:cursive
+}
+
 
 .obstacle{
    font-size:50px;
     z-index: 5;
     position: absolute;
-    bottom: 20%;
-    right: 0; 
+    bottom: 16%;
+    right: -1500px; 
 
 }
 
+#log2 {
+    right: -4000px;
+    font-size:80px;
+    top:63%
+}
+
+
+#log3 {
+    right: -7000px;
+
+}
