@@ -148,6 +148,34 @@ body {
 
 
 #log3 {
-    right: -7000px;
+    right: -8000px;
+    font-size:120px
 
+}
+
+
+#log4{
+    right:-12000px;
+    font-size:110px
+}
+
+
+#log5{
+    right:-15000px
+}
+
+
+#log6{
+    right:-17500px;
+    font-size:80px
+}
+
+#log7{
+    right:-20000px;
+    font-size:120px
+}
+
+
+#log8{
+    right:-22000px
 }
