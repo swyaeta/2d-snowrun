@@ -105,7 +105,7 @@ body {
     }
 }
 
-/* this to style the snowflakes */
+
 #collectibles {
     position: absolute;
     top: 0;
@@ -123,6 +123,7 @@ body {
 }
 
 
+/* to style the score counter*/
 .score {
     position: absolute;
     top: 20px;
@@ -133,7 +134,7 @@ body {
     font-family:cursive
 }
 
-
+/* this is to style the obstcales and make it apppear at a certain fixed time*/
 .obstacle{
    font-size:50px;
     z-index: 5;
@@ -192,6 +193,7 @@ body {
 }
 
 
+/* this is to style music box */
 .mbox{
     width: 60px;
     height: 60px;

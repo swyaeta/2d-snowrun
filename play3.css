@@ -142,7 +142,6 @@ body {
 }
 
 /* this is for the different obstacles that comes in the way while running the race */
-
 #log{
     right:-2000px;
     font-size:80px
@@ -291,7 +290,7 @@ body {
     font-size:110px
 }
 
-
+/* this is to style the music button*/
 .mbox{
     width: 60px;
     height: 60px;
