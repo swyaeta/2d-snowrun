@@ -224,3 +224,27 @@ function checkCollision() {
     requestAnimationFrame(checkCollision);
 }
 checkCollision();
+
+// this is for the music controlling //
+let music = document.getElementById("bgMusic");
+let musicBtn = document.getElementById("mbox");
+
+musicBtn.addEventListener("click", function(event) {
+    event.stopPropagation();
+
+    if (music.paused) {
+        music.play();
+        musicBtn.textContent = "🔊";
+    } else {
+        music.pause();
+        musicBtn.textContent = "🔇";
+    }
+});
+
+// to make the enter not activate the music off/on //
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Enter" && document.activeElement === musicBtn) {
+        event.preventDefault();
+        musicBtn.blur();
+    }
+});

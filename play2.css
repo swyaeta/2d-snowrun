@@ -229,3 +229,18 @@ body {
     right:-28000px;
     font-size:100px
 }
+
+
+.mbox{
+    width: 60px;
+    height: 60px;
+    border: 2px solid rgb(188, 197, 244);
+    background-color: rgb(110, 142, 255);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 20;
+    font-size: 30px;
+    cursor: pointer;
+    border-radius: 30px;
+}

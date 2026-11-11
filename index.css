@@ -1,10 +1,12 @@
 
+/* this is for styling the bg of the page*/
 body {
     background-color:#cef3fc;
     text-align:center;
     font-family:cursive
 }
 
+/* this is for the heading */
 h1{
    color:#174A70;
    font-size:60px;
@@ -12,14 +14,14 @@ h1{
 
 }
 
-
+/* this is for the subheading of the page*/
 p{
     color:#228e63;
     font-size:19px;
     margin-top:-25px
 }
 
-
+/* this is the container of the bg img */
 .back{
     background-color:rgb(185, 226, 239);
     width:80%;
@@ -29,6 +31,7 @@ p{
     left:10%
 }
 
+/* this is to style the img so doesnot cover the whole screen*/
 .back img {
     width:100%;
     height:100%;
@@ -36,6 +39,7 @@ p{
 
 }
 
+/* this to style the play button and give it a 3d look*/
 .play{
     width:14%;
     height:10%;

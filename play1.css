@@ -4,6 +4,7 @@ body {
     font-family:cursive
 }
 
+/* this holds everything in the level 1 */
 .game{
     position:relative;
     width:100%;
@@ -81,6 +82,7 @@ body {
     }
 }
 
+/* this to style the yeti sprite */
 .yeti{
     width:330px;
     height:270px;
@@ -103,6 +105,7 @@ body {
     }
 }
 
+/* this to style the snowflakes */
 #collectibles {
     position: absolute;
     top: 0;
@@ -187,3 +190,19 @@ body {
     top:86%;
     font-size:55px
 }
+
+
+.mbox{
+    width: 60px;
+    height: 60px;
+    border: 2px solid rgb(188, 197, 244);
+    background-color: rgb(110, 142, 255);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 20;
+    font-size: 30px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
