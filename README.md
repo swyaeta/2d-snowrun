@@ -51,4 +51,4 @@
 #### Open index.html in your browser.
 #### Start exploring!
 
-#### The character sprites and bg used there are not mine, these are from the internet.
+## The character sprites and bg used there are not mine, these are from the internet.
