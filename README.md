@@ -45,7 +45,7 @@
 - JavaScript
 
 
-### How to Run Locally:
+## How to Run Locally:
 #### Download or clone this repository.
 #### Open the project folder.
 #### Open index.html in your browser.
