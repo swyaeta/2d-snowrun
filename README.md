@@ -1,6 +1,6 @@
 # 2d-snowrun:
 
-### This is a 2d snow-run game where a giant yeti chases you in an endless forest and you run for your life with differnet obstacles, and you also collect snowflakes that are in diff levels in the sky and there's are also 3 different levels of the game !
+### This is a 2d snow-run game where a giant yeti chases you in an endless forest and you run for your life with differnet obstacles, and you also collect snowflakes that are in different levels in the sky and there's are also 3 different levels of the game !
 ### This has 3 levels each level is darker and faster and has more obstacles than the other one
 
 ## The main page:
