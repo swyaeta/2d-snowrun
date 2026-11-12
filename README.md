@@ -25,3 +25,17 @@
 <img width="1713" height="732" alt="Screenshot (1848)" src="https://github.com/user-attachments/assets/bbfed45b-ecf8-408c-be76-9932d181b23f" />
 
 ### It has music and it can be offed and on in every level
+
+### Built With
+- HTML
+- CSS
+- JavaScript
+
+
+### How to Run Locally:
+#### Download or clone this repository.
+#### Open the project folder.
+#### Open index.html in your browser.
+#### Start exploring!
+
+#### The character sprites and bg used there are not mine, these are from the internet 
