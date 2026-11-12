@@ -43,6 +43,7 @@
 - HTML
 - CSS
 - JavaScript
+- Alot of fun too
 
 
 ## How to Run Locally:
